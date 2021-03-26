@@ -22,7 +22,7 @@
 ###### We’ll use the `git clone` command along with the URL of the repository.
 
 
-`git clone https://github.com/Coding-Club-NIT-Meghalaya/CodingClubWebsite.git`
+`git clone https://github.com/aakashgusain1990/Text-Encryption.git`
 
 ###### Now we have the copy of file in our computer (you can cross verify it by going to the location showing in Command Prompt)
 
