@@ -31,7 +31,7 @@
 
 ###### to navigate from command prompt we have simple command called as `cd folderName` Here we will do:
 
-##### ` cd CodingClubWebsite`
+##### ` cd Text-Encryption`
 
 #### Make Changes Locally
 ##### For Ex:
