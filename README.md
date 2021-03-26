@@ -70,9 +70,3 @@
 ###### `git pull` or `git pull origin main`
 ###### After writing this on command prompt all the files in Github repository will come to your computer. It is recommended to do this before pushing the code to repository.
 
-
-
-## 👑 👑 Hurray!!! WE just got closer to COMPLETING Website. 😃
-
-
-### 🖤💯💥 Thanks to our awesome contributors 💥💯🖤
