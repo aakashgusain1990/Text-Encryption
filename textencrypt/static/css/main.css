@@ -1,0 +1,199 @@
+*{
+  margin: 0px;
+  /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+.container {
+  border-radius: 5px;
+  background-color: #ccc8c8;
+  padding: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid rgb(231, 229, 229); /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #070707;
+    color:white;
+    padding: 12px 20px;
+    border: none;
+    margin-left: 40%;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: white;
+    align-content: center;
+    color:black;
+  }
+  
+  /* Add a background color and some padding around the form */
+  
+  
+nav {
+      display: flex;
+      justify-content: left;
+  
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      height: 50px;
+      z-index: 100;
+    }
+    ul {
+      list-style: none;
+    }
+    .buttonHolder{ text-align: center; }
+    .nav-links {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+    }
+    .nav-links li {
+      list-style: none;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      font-size: 1.3vw;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+  /* #logo{
+    height: 10px;
+    width: 20px;
+  }  */
+  .burger {
+      display: none;
+      margin-left: 70vw;
+    }
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: rgb(226, 226, 226);
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+    #logo img {
+      padding-top:2px;
+      width: 4vw;
+      /* height: 5vh; */
+      margin: 5vw 0;
+      margin-left: 5vw;
+    }
+    /* ****background-color_class****** */
+    .bgColor {
+      background-color: rgba(75, 41, 124, 0.5);
+      width: 100%;
+      position: fixed;
+      /* -webkit-position:sticky; */
+      /* top:0; */
+      z-index: 100;
+    }
+    /* **animation styling*** */
+    .button_scroll {
+      fill: unset;
+      border: none;
+      position: fixed;
+      background: #B5076B;
+      box-shadow: inset 5px -6px 10px rgba(0, 0, 0, 0.25), inset -5px 5px 8px rgba(176, 71, 131, 0.82);
+      border-radius: 50%;
+      right: 3vw;
+      bottom: 3vw;
+      width: 4vw;
+      height: 4vw;
+      z-index: 3;
+      padding: 0.5vw;
+    }
+    .button_scroll #contact {
+      display: none;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #logo img {
+        padding-top: 0;
+        width: 10vw;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(75, 41, 124, 0.5);
+        height: 10vh;
+        z-index: 2;
+      }
+      .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 10vh;
+        background-color: rgba(148, 148, 150, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+      }
+      .nav-links li a {
+        color: rgb(8, 0, 0);
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .nav-links li {
+        opacity: 0;
+      }
+      .burger {
+        display: block;
+        cursor: pointer;
+      }
+    }
+    .nav-active {
+      transform: translateX(0%);
+    }
+    /* input[type=submit] {
+      background-color: #070707;
+      color:white;
+      padding: 12px 20px;
+      border: none;
+      margin-left: 75px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    */
+    @keyframes navLinkFade {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+      opacity: 0;
+    }
+    .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
