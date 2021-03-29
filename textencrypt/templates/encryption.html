@@ -3,17 +3,15 @@
 {% block content %}
 <br>
 <div class="container">
-    <form action="">
+    <form method="POST" action="{% url 'encrypted' %}" >
+      {% csrf_token %}
       <label for="encrypt">Encrypt Text:</label>
-      <input type="text" placeholder="Encrypt Text">
+      <input type="text" placeholder="Encrypt Text" name="enctext">
       <br>
       <label for="pwd">Password:</label>
-      <input type="text" placeholder="Password">
+      <input type="text" placeholder="Password" name="passkey">
       <br>
       <input type="submit" value="Encrypt" >
-      
-      
-      
       
     </form>
   </div>
