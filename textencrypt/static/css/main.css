@@ -43,7 +43,7 @@ input[type=text], select, textarea {
   
 nav {
       display: flex;
-      justify-content: left;
+       justify-content: space-around;
   
       align-items: center;
       position: fixed;
@@ -87,10 +87,10 @@ nav {
     }
     #logo img {
       padding-top:2px;
-      width: 4vw;
+      width: 3vw;
       /* height: 5vh; */
       margin: 5vw 0;
-      margin-left: 5vw;
+      margin-left: 0vw;
     }
     /* ****background-color_class****** */
     .bgColor {
@@ -126,8 +126,8 @@ nav {
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
       #logo img {
-        padding-top: 0;
-        width: 10vw;
+        padding-top: 0.7vh;
+        width: 8vw;
       }
       nav {
         position: fixed;

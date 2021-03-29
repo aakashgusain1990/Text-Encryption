@@ -1,13 +1,15 @@
 {% load static %}
 
   <nav style="background-color: black;">
-    <div id="logo"><a href="#"><img src="{% static "media/logo.png" %}" alt="dfs"></a></div> 
-   <ul class="nav-links">
-     <li><a href=""> HOME</a></li>
-     <li> <a href="">RESOURCES</a> </li>
-     <li> <a href="">EVENTS</a> </li>
-     <li> <a href="">PROJECTS</a> </li>
-     <li> <a href="">TEAM</a> </li>
+    <div id="logo" ><a href="{% url 'home' %}"><img src="{% static "media/logo.png" %}" alt="dfs"></a> 
+    </div> 
+   
+    <ul class="nav-links">
+      <li> <a href="{% url 'home' %}">CIPHER</a> </li>
+     <li> <a href="{% url 'encrypt' %}">EncryptText</a> </li>
+     <li> <a href="{% url 'encrypt' %}">EncryptIMG</a> </li>
+    <li> <a href="{% url 'decrypt' %}">DecryptText</a> </li>
+     <li> <a href="{% url 'decrypt' %}">DecryptIMG</a> </li>
      <!-- <li><input type="text" placeholder="Search.."></li> -->
    </ul>
    
