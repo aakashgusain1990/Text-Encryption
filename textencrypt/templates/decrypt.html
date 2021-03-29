@@ -3,18 +3,16 @@
 {% block content %}
 <br>
 <div class="container">
-    <form action="">
+    <form method="POST" action="{% url 'decrypt' %}" enctype="multipart/form-data">
+      {% csrf_token %}
       <label for="decrypt">Decrypt Text:</label>
-      <input type="text" placeholder="Decrypt Text">
+      <input type="text" placeholder="Decrypt Text" name="etext">
       <br>
       <label for="pwd">Password:</label>
-      <input type="text" placeholder="Password">
+      <input type="text" placeholder="Password" name="pwdd">
       <br>
       <input type="submit" value="Decrypt" >
-      
-      
-      
-      
+         
     </form>
   </div>
 {% endblock %}
