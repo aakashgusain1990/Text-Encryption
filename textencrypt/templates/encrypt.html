@@ -3,7 +3,7 @@
 {% block content %}
 <br>
 <div class="container">
-    <form method="POST" action="{% url 'encrypted' %}" >
+    <form method="POST" action="{% url 'encrypt' %}" enctype="multipart/form-data" >
       {% csrf_token %}
       <label for="encrypt">Encrypt Text:</label>
       <input type="text" placeholder="Encrypt Text" name="enctext">

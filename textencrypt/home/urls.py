@@ -1,18 +1,13 @@
 from django.urls import path
-from .views import (
-    home, 
-    encryption,
-    decryption,
-    encrypted,
-    decrypted,
-)
+from . import views
+  
 urlpatterns = [
     # path('', include('home.urls')),
-    path('',home, name='home'),
-    path('encryption/',encryption, name='encrypt'),
-    path('decryption/',decryption,name='decrypt'),
-    path('encrypted/',encrypted, name='encrypted'),
-    path('decrypted/',decrypted,name='decrypted'),
+    path('',views.home, name='home'),
+    path('encrypt/',views.encrypt, name='encrypt'),
+    path('decrypt/',views.decrypt,name='decrypt'),
+    path('encrypted/',views.encrypted, name='encrypted'),
+    path('decrypted/',views.decrypted,name='decrypted'),
     
 
 ]

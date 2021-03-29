@@ -4,8 +4,8 @@ class AllData(models.Model):
     passkey = models.CharField(max_length=200)
     encrytext = models.TextField()
     
-    # def __str__(self):
-    #     return self.passkey
+    def __str__(self):
+        return self.passkey
 
     
 
