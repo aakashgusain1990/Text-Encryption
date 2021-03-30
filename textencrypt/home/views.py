@@ -47,7 +47,7 @@ def decrypt(request):
                 decryptext+=char
                 j+=1
             print(decryptext)
-            return redirect('/decrypted/')
+            return render(request,'decrypted.html',{'decryptext':decryptext})
         except:
             messages.warning(request, "INCORRECT PASSWORD OR TEXT")
     return render(request, 'decrypt.html')
