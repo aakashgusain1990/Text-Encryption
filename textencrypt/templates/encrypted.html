@@ -1,25 +1,12 @@
 {% extends 'main.html' %}
 {% block content %}
 </br>
-<style>
-    #cent {
-  position:absolute;
-  top: 20%;
-  left:20%;
-  border: 1px solid white;
-  box-shadow: 2px 2px 2px 2px lightgrey;
-  height: 300px;
-  width: 500px;
-  background: linear-gradient(112.91deg,
-            rgba(255, 255, 255, 0.479) 3.51%,
-            rgba(255, 255, 255, 0) 111.71%);
-  text-align: center;
-}
-</style>
-<div style="padding-top: 4vh;height: 400px; background-color:rgb(160, 204, 221);">
-    <div id=cent>
-      <div style="font-size: 3rem; padding: 1em; color: rgb(7, 7, 7); margin-top: 12vh">{{enc}}</div>
+<div style="padding-top: 4vh;height: 400px; background-color:rgba(129, 139, 143, 0.822);">
+  <div id=cent>
+      <div style="font-size: 3rem; color: rgb(7, 7, 7); margin-top: 3vh">Encrypted text:<br></div>
+    <div id=cent1>
+      <div style="font-size: 3rem; color: rgb(7, 7, 7); margin-top: 3vh">{{decryptext}}</div>    
     </div>
- 
+  </div>
 </div>
 {% endblock %}
