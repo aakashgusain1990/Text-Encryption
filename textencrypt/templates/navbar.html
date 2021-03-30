@@ -1,11 +1,12 @@
 {% load static %}
 
   <nav style="background-color: black;">
+    
     <div id="logo" ><a href="{% url 'home' %}"><img src="{% static "media/logo.png" %}" alt="dfs"></a> 
     </div> 
-   
+    <a style="text-decoration: none;" href="{% url 'home' %}"><ul style="color:blueviolet; padding-inline-start:0px; margin-block-start:0px; font-size: 2rem;"> CIPHER</ul></a>
     <ul class="nav-links">
-      <li> <a href="{% url 'home' %}">CIPHER</a> </li>
+
      <li> <a href="{% url 'encrypt' %}">EncryptText</a> </li>
      <li> <a href="{% url 'encrypt' %}">EncryptIMG</a> </li>
     <li> <a href="{% url 'decrypt' %}">DecryptText</a> </li>
