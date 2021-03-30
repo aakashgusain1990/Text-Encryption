@@ -51,6 +51,7 @@
   padding: 20px;
   position: relative;
   margin-top: 20px;
+  height:350px;
 }
 input[type=text], select, textarea {
     width: 100%; /* Full width */
@@ -58,7 +59,7 @@ input[type=text], select, textarea {
     border: 1px solid rgb(231, 229, 229); /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
+    margin-top: 15px; /* Add a top margin */
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
   }
@@ -69,7 +70,8 @@ input[type=text], select, textarea {
     color:white;
     padding: 12px 20px;
     border: none;
-    margin-left: 40%;
+    margin-left: 44%;
+    margin-top: 7%;
     border-radius: 4px;
     cursor: pointer;
   }
