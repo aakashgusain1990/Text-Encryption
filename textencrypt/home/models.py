@@ -7,6 +7,13 @@ class AllData(models.Model):
     def __str__(self):
         return self.passkey
 
+class ImgData(models.Model):
+    imgpasskey = models.CharField(max_length=200)
+    encryptimg = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.imgpasskey
+
     
 
 

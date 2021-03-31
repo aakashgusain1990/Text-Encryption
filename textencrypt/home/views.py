@@ -57,4 +57,9 @@ def encrypted(request):
 def decrypted(request):
     return render(request, 'decrypted.html')
     
+def imgencrypt(request):
+    return render(request,'imgencrypt.html')
+
+def imgdecrypt(request):
+    return render(request,'imgdecrypt.html')
    

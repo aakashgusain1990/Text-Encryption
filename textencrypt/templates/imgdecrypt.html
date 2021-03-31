@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+    <form method="POST" action="{% url 'encrypt' %}" enctype="multipart/form-data" >
+      {% csrf_token %}
+      <label for="encrypt">Select encryptedImage:</label>
+      <input type="file" name="image"/>
+    </br>
+      <br>
+      <label for="pwd">Password:</label>
+      <input type="text" placeholder="Password" name="passkey">
+      <br>
+      <input type="submit" value="Encrypt" >
+      
+    </form>
+  </div>
+{% endblock %}
