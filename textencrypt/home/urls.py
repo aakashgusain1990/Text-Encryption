@@ -10,6 +10,7 @@ urlpatterns = [
     path('decrypted/',views.decrypted,name='decrypted'),
     path('imgencrypt/',views.imgencrypt,name='imgencrypt'),
     path('imgdecrypt/',views.imgdecrypt,name='imgdecrypt'),
-    
+    path('imgencrypted/',views.imgencrypted,name='imgencrypted'),
+    path('imgdecrypted/',views.imgdecrypted,name='imgdecrypted'),
 
 ]

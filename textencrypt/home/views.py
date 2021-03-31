@@ -92,4 +92,7 @@ def imgencrypt(request):
 
 def imgdecrypt(request):
     return render(request,'imgdecrypt.html')
-   
+def imgdecrypted(request):
+    return render(request,'imgdecrypted.html')
+def imgencrypted(request):
+    return render(request,'imgencrypted.html')
