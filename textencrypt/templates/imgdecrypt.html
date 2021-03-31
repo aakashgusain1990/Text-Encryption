@@ -3,7 +3,7 @@
 {% block content %}
 <br>
 <div class="container">
-    <form method="POST" action="{% url 'encrypt' %}" enctype="multipart/form-data" >
+    <form method="POST" action="{% url 'imgdecrypt' %}" enctype="multipart/form-data" >
       {% csrf_token %}
       <label for="encrypt">Select encryptedImage:</label>
       <input type="file" name="image"/>
