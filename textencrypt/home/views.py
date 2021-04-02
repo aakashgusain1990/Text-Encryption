@@ -64,33 +64,54 @@ def imgencrypt(request):
         imgdata=ImgData()
         imgdata.imgpasskey=key
         imgdata.encryptimg=image
-        ###############################################
-        # file_name=imgdata.encryptimg.name
-        # fi=open(file_name,'rb')
-        # image=fi.read()
-        # fi.close()
-        # with open("image", "rb") as image:
-        #     f = image.read()
-        #     img = bytearray(f)
-        keys=0
-        for i in key:
-            keys+=ord(i)
-        l=len(key)
-        key=keys%l
-        print(key)
-        image=image.name
-        img=bytearray(image)
-        for index,values in enumerate(img):
-            img[index]=values^int(key)
-        # fi1=open(file_name,'wb')
-        # fi1.write(image)
-        # fi1.close()
-        imgdata.encryptimg=img
-        #######################################################
         imgdata.save()
+
+        imgObj = ImgData.objects.get(imgpasskey=key)
+        passwd=0
+        j=1
+        for i in key:
+            passwd+=j*(ord(i))
+            j+=1
+        key=(passwd)%256
+        print(imgObj.encryptimg.path)
+        fi=open(imgObj.encryptimg.path,'rb')
+        image=fi.read()
+        fi.close()
+        image=bytearray(image)
+        # print(image)
+        for index, values in enumerate(image):
+            image[index]=values^int(key)
+        fi1=open(imgObj.encryptimg.path,'wb') 
+        fi1.write(image)
+        fi1.close()
+        return render(request, 'imgencrypted.html',{'imgdata':imgdata})
     return render(request,'imgencrypt.html')
 
 def imgdecrypt(request):
+    if request.method=='POST':
+        key=request.POST['passkey']
+        # image=request.FILES['image']
+        imgdata=ImgData()
+        imgObj = ImgData.objects.get(imgpasskey=key)
+        image=imgObj.encryptimg
+        passwd=0
+        j=1
+        for i in key:
+            passwd+=j*(ord(i))
+            j+=1
+        key=(passwd)%256
+        print(imgObj.encryptimg.path)
+        fi=open(imgObj.encryptimg.path,'rb')
+        image=fi.read()
+        fi.close()
+        image=bytearray(image)
+        # print(image)
+        for index, values in enumerate(image):
+            image[index]=values^int(key)
+        fi1=open(imgObj.encryptimg.path,'wb') 
+        fi1.write(image)
+        fi1.close()
+        return render(request, 'imgdecrypted.html',{'imgdata':imgObj})
     return render(request,'imgdecrypt.html')
 def imgdecrypted(request):
     return render(request,'imgdecrypted.html')
