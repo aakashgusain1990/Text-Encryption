@@ -65,8 +65,7 @@ def imgencrypt(request):
         imgdata.imgpasskey=key
         imgdata.encryptimg=image
         imgdata.save()
-
-        imgObj = ImgData.objects.get(imgpasskey=key)
+        imgObj = ImgData.objects.filter(imgpasskey=key).last()
         passwd=0
         j=1
         for i in key:
@@ -90,25 +89,25 @@ def imgencrypt(request):
 def imgdecrypt(request):
     if request.method=='POST':
         key=request.POST['passkey']
-        # image=request.FILES['image']
-        imgdata=ImgData()
-        imgObj = ImgData.objects.get(imgpasskey=key)
-        image=imgObj.encryptimg
+        image=request.FILES['image']
+        imgObj = ImgData.objects.filter(imgpasskey=key).last()
+        imgObj.decryptimg=image
+        imgObj.save()
         passwd=0
         j=1
         for i in key:
             passwd+=j*(ord(i))
             j+=1
         key=(passwd)%256
-        print(imgObj.encryptimg.path)
-        fi=open(imgObj.encryptimg.path,'rb')
+        print(imgObj.decryptimg.path)
+        fi=open(imgObj.decryptimg.path,'rb')
         image=fi.read()
         fi.close()
         image=bytearray(image)
         # print(image)
         for index, values in enumerate(image):
             image[index]=values^int(key)
-        fi1=open(imgObj.encryptimg.path,'wb') 
+        fi1=open(imgObj.decryptimg.path,'wb') 
         fi1.write(image)
         fi1.close()
         return render(request, 'imgdecrypted.html',{'imgdata':imgObj})
