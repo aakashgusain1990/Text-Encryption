@@ -1,1 +1,1 @@
-web: gunicorn textencrypt.wsgi 
+web: gunicorn textencrypt.wsgi --log-files -
